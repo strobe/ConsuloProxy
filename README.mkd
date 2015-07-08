@@ -1,28 +1,12 @@
-# Sublime Proxy
-
-Hey,
+# VSC Proxy
 
 To install:
-
 - Build it or use the prebuilt package found in Builds (was compiled on Mac OSX
-10.8 64-bit) 
-- Put SublimeProxy.app wherever you want 
-- Make sure original Sublime Text 2.app is in the Applications folder 
+10.8 64-bit)
+- Put VSCProxy.app wherever you want
+- Make sure original Visual Studio Code.app is in the Applications folder
 - Point Unity's External Editor setting at the Sublime Proxy app
 
-Now whenever you click on an error line in Unity it should open up to the
-correct place in Sublime Text 2! Sweet.
-
-There’s still an issue with the implementation, where the first time you try to
-open a file it gives the error:
-
-The document “x” could not be opened. SublimeProxy cannot open files in the
-“All files” format.
-
-If that comes up just click OK and then click on the file again; it should
-open. I’m not sure why it happens – seems to be something to do with Document
-Types in the info.plist. I haven’t got the time to sort that out at the moment
-– if anyone knows how, let me know, or fix it yourself and send a pull request
-on Github.
-
-Props to Tim Keating who got the barebones event handler setup.
+Special thanks to:
+- Tim Keating who got the barebones event handler setup
+- Allan Lavell who did the heavy lifting for SublimeProxy (https://github.com/thinkrad/SublimeProxy)
