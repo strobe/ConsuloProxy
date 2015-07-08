@@ -1,13 +1,19 @@
 //
 //  AppDelegate.m
-//  SublimeProxy
+//  VSCProxy
 //
 //  Originally Created by Tim Keating to register an apple event handler, and NSLog the output on 5/18/13.
 //  Modified by Allan Lavell to open Sublime Text 2 at the correct line location on 31st 07/31/13.
+//  Modified by Wallace Huang to open Visual Studio Code v0.5.0 July 10, 2015
 
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+
+//NSString *const APP_PATH = @"/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl";
+//NSString *const LINE_FORMAT = @"%@:%d;
+NSString *const APP_PATH = @"/Applications/Visual Studio Code.app/Contents/MacOS/Electron";
+NSString *const LINE_FORMAT = @"%@:%d:0";
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
     [[NSAppleEventManager sharedAppleEventManager]
@@ -18,7 +24,7 @@
 - (void)handleAppleEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
     NSTask *task;
     task = [[NSTask alloc] init];
-    [task setLaunchPath:@"/Applications/Sublime\ Text\ 2.app\/Contents/SharedSupport/bin/subl"];
+    [task setLaunchPath:APP_PATH];
     
     NSData *eventData = [event data];
     
@@ -32,13 +38,16 @@
     
     const AEKeyword filekey  = '----';
     NSString *filepath = [[[event descriptorForKeyword:filekey] stringValue] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
-    NSString *filepathWithLine = [NSString stringWithFormat:@"%@:%d", filepath, x];
+    NSString *filepathWithLine = [NSString stringWithFormat:LINE_FORMAT, filepath, x];
     filepathWithLine = [filepathWithLine stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSArray *arguments;
-    arguments = [NSArray arrayWithObjects: filepathWithLine, nil];
+    // wh: had to add more flags to the arguments array
+    arguments = [NSArray arrayWithObjects: @"-r", @"-g", filepathWithLine, nil];
     [task setArguments: arguments];
     
     [task launch];
+    
+    [[NSApplication sharedApplication] terminate:nil];
 }
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
