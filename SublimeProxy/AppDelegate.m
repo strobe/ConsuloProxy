@@ -12,8 +12,8 @@
 
 //NSString *const APP_PATH = @"/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl";
 //NSString *const LINE_FORMAT = @"%@:%d;
-NSString *const APP_PATH = @"/Applications/Visual Studio Code.app/Contents/MacOS/Electron";
-NSString *const LINE_FORMAT = @"%@:%d:0";
+NSString *const APP_PATH = @"/Applications/Consulo.app/Contents/MacOS/consulo";
+NSString *const LINE_FORMAT = @"%@:%d";
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
     [[NSAppleEventManager sharedAppleEventManager]
@@ -42,7 +42,9 @@ NSString *const LINE_FORMAT = @"%@:%d:0";
     filepathWithLine = [filepathWithLine stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSArray *arguments;
     // wh: had to add more flags to the arguments array
-    arguments = [NSArray arrayWithObjects: @"-r", @"-g", filepathWithLine, nil];
+    // TODO: currently I pass 0 as line number, need later check value handing that coming from unity to be surre that is a correct
+    arguments = [NSArray arrayWithObjects: @"--line", @"0", filepath, nil];
+
     [task setArguments: arguments];
     
     [task launch];
