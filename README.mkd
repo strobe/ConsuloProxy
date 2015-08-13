@@ -1,3 +1,5 @@
+Work in progress - based on (VSC Proxy):
+```
 # VSC Proxy
 
 To install:
@@ -10,3 +12,4 @@ To install:
 Special thanks to:
 - Tim Keating who got the barebones event handler setup
 - Allan Lavell who did the heavy lifting for SublimeProxy (https://github.com/thinkrad/SublimeProxy)
+```
