@@ -43,7 +43,7 @@ NSString *const LINE_FORMAT = @"%@:%d";
     NSArray *arguments;
     // wh: had to add more flags to the arguments array
     // TODO: currently I pass 0 as line number, need later check value handing that coming from unity to be surre that is a correct
-    arguments = [NSArray arrayWithObjects: @"--line", @"0", filepath, nil];
+    arguments = [NSArray arrayWithObjects: @"--line", [NSString stringWithFormat:@"%d",x], filepath, nil];
 
     [task setArguments: arguments];
     
