@@ -37,7 +37,7 @@ NSString *const LINE_FORMAT = @"%@:%d";
     x += 1;
     
     const AEKeyword filekey  = '----';
-    NSString *filepath = [[[event descriptorForKeyword:filekey] stringValue] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+    NSString *filepath = [[[[event descriptorForKeyword:filekey] stringValue] stringByReplacingOccurrencesOfString:@"file://" withString:@""] stringByReplacingOccurrencesOfString:@"%20" withString:@" "];
     NSString *filepathWithLine = [NSString stringWithFormat:LINE_FORMAT, filepath, x];
     filepathWithLine = [filepathWithLine stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSArray *arguments;
