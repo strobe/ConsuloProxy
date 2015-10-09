@@ -1,4 +1,6 @@
-Work in progress - based on (VSC Proxy):
+Consulo Proxy
+===========
+This is a simple fork of VSCPProxy, which makes it work with Consulo instead of Visual Studio COde. The original readme follows:
 ```
 # VSC Proxy
 
