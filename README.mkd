@@ -1,6 +1,16 @@
 Consulo Proxy
 ===========
-This is a simple fork of VSCPProxy, which makes it work with Consulo instead of Visual Studio COde. The original readme follows:
+This is a simple fork of VSCPProxy, which makes it work with Consulo instead of Visual Studio Code or Sublime. 
+
+## Instaling
+
+Generaly instaling and configuring steps for Unity3dToConsuloProxy is same to VSCProxy.
+
+1. copy *.app to some location like /Application
+2. be sure that you have /Application/Consulo.app (see [Consulo IDE](https://github.com/consulo/consulo))
+3. Point Unity3d External Editor settings at Unity3dToConsuloProxy.app
+
+The original readme of VSCProxy follows:
 ```
 # VSC Proxy
 
@@ -15,3 +25,5 @@ Special thanks to:
 - Tim Keating who got the barebones event handler setup
 - Allan Lavell who did the heavy lifting for SublimeProxy (https://github.com/thinkrad/SublimeProxy)
 ```
+
+Also some details can be found at VSCProxy origin project [SublimeProxy](https://github.com/thinkrad/SublimeProxy)
