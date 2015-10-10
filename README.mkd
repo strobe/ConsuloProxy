@@ -1,6 +1,10 @@
-Consulo Proxy
+Unity3d To Consulo Proxy
 ===========
 This is a simple fork of VSCPProxy, which makes it work with Consulo instead of Visual Studio Code or Sublime. 
+
+## What is 'Unity3d To Consulo Proxy'?
+
+'Unity3d To Consulo Proxy' is a  simple tool which allow to you open *.cs source code files at Consulo IDE (Fork of IteliJ Idea for CSharp development) directly from Unity3d editor just by clicking on files in project view or by clicking on error messages at console view.
 
 ## Instaling
 
