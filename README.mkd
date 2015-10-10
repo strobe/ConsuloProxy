@@ -12,7 +12,7 @@ Generaly instaling and configuring steps for Unity3dToConsuloProxy is same to VS
 
 1. copy *.app to some location like /Application
 2. be sure that you have /Application/Consulo.app (see [Consulo IDE](https://github.com/consulo/consulo))
-3. Point Unity3d External Editor settings at Unity3dToConsuloProxy.app
+3. Point Unity3d External Editor settings at ConsuloProxy.app
 
 The original readme of VSCProxy follows:
 ```
